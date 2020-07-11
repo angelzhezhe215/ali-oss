@@ -143,7 +143,7 @@ export async function _resumeMultipartCopy(this: any, checkpoint, sourceData, op
     }
   } else {
     // upload in parallel
-    const errors = await _parallel.call(this, todo, parallel, uploadPartJob, sourceData);
+    const errors: any = await _parallel.call(this, todo, parallel, uploadPartJob, sourceData);
 
     if (this.isCancel()) {
       throw _makeCancelEvent();

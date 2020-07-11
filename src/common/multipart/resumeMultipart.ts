@@ -92,7 +92,7 @@ export async function resumeMultipart(this: any, checkpoint, options) {
     }
   } else {
     // upload in parallel
-    const jobErr = await _parallel.call(this, todo, parallel, uploadPartJob);
+    const jobErr: any = await _parallel.call(this, todo, parallel, uploadPartJob);
 
     if (this.isCancel()) {
       uploadPartJob = null;
